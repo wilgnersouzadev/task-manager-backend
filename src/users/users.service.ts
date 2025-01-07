@@ -23,6 +23,6 @@ export class UsersService {
   }
 
   async findOne(id: number): Promise<User> {
-    return this.usersRepository.findOne({ where: { id } });
+    return this.usersRepository.findOneOrFail({ where: { id } });
   }
 }
