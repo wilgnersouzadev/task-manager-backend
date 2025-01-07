@@ -22,54 +22,103 @@
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Description
+## 📋 Task Manager - Backend
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+A aplicação backend é desenvolvida usando NestJS com TypeORM e MySQL. Ela fornece endpoints de autenticação (JWT), registro de usuários e gerenciamento de tarefas.
 
-## Project setup
+## 🚀 Funcionalidades
+
+- Autenticação JWT
+- Registro de Usuários
+- Criação, Atualização e Exclusão de Tarefas
+- Listagem de Tarefas (associadas ao usuário autenticado)
+- Proteção de rotas com Guards (JwtAuthGuard)
+
+## 🛠️ Tecnologias Utilizadas
+
+- [NestJs](https://github.com/nestjs/nest)
+- [TypeORM](https://docs.nestjs.com/recipes/sql-typeorm)
+- [MySQL](https://dev.mysql.com/doc/)
+- [Docker](https://docs.docker.com/?_gl=1*1sk8arg*_gcl_au*MTMyNTQxNDU4OS4xNzM2MjkzODA3*_ga*MTgyNDgwMzcwOC4xNzM2MjkzODA4*_ga_XJWPQMJYHQ*MTczNjI5MzgwNy4xLjEuMTczNjI5MzgwOC41OS4wLjA.)
+- [JWT](https://jwt.io/) (JSON Web Token)
+- [Bcrypt](https://www.npmjs.com/package/bcrypt) - Para hashing de senhas
+
+## 🏗️ Estrutura do Projeto
 
 ```bash
+src/
+│
+├── auth/
+│ ├── auth.controller.ts
+│ ├── auth.service.ts
+│ ├── jwt.strategy.ts
+│ └── guards/
+│ └── jwt-auth.guard.ts
+│
+├── users/
+│ ├── user.entity.ts
+│ ├── users.controller.ts
+│ └── users.service.ts
+│
+├── tasks/
+│ ├── task.entity.ts
+│ ├── tasks.controller.ts
+│ └── tasks.service.ts
+│
+├── database/
+│ ├── entities/
+│ ├── migrations/
+│ └── ormconfig.ts
+│
+└── app.module.ts
+```
+
+## 📦 Instalação e Configuração
+
+```bash
+# Clone o repositório:
+$ git clone https://github.com/wilgnersouzadev/task-manager-backend.git
+cd task-manager-backend
+```
+
+```bash
+# Configure as variáveis de ambiente (.env):
+DB_HOST=localhost
+DB_PORT=3306
+DB_USER=root
+DB_PASS=root
+DB_NAME=task_manager
+JWT_SECRET=seu_segredo
+PORT=3000
+```
+
+```bash
+# Suba o MySQL no Docker (precisa apenas subir o container que a aplicação ja estará rodando no docker):
+$ docker-compose up -d
+```
+
+```bash
+# Instale as dependências:
 $ npm install
 ```
 
-## Compile and run the project
-
 ```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+# Execute as migrações do banco de dados:
+$ npm run migration:run
 ```
 
-## Run tests
-
+## 🛡️ Endpoints Principais
+Auth:
 ```bash
-# unit tests
-$ npm run test
+POST /api/auth/register - Registro de usuário
+POST /api/auth/login - Login e geração de token JWT
+Tasks:
 
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+GET /api/tasks - Lista todas as tarefas do usuário autenticado
+POST /api/tasks - Cria uma nova tarefa
+PUT /api/tasks/:id - Atualiza uma tarefa
+DELETE /api/tasks/:id - Exclui uma tarefa
 ```
-
-## Deployment
-
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
-
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
-
-```bash
-$ npm install -g mau
-$ mau deploy
-```
-
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
 
 ## Resources
 
@@ -88,11 +137,24 @@ Check out a few resources that may come in handy when working with NestJS:
 
 Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
 
-## Stay in touch
+## Autor ✍
 
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+<a href="https://www.linkedin.com/in/wilgner-souza-stw97/">
+ <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/wilgnersouza" width="100px;" alt="Wilgner Souza"/>
+ <br />
+ <sub><b>Wilgner Souza</b></sub></a> <a href="https://www.linkedin.com/in/wilgner-souza-stw97/" title="Linkedin Wilgner">💻</a>
+
+Feito por Wilgner Souza 😉 </br>
+
+Entre em contato! 👇👇 </br>
+
+<div>
+  <a href="https://www.facebook.com/wilgner.souza.stw" target="_blank"><img src="https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white" target="_blank"></a>
+  <a href="https://www.instagram.com/showtimewill97/" target="_blank"><img src="https://img.shields.io/badge/-Instagram-b80750?style=for-the-badge&logo=instagram&logoColor=white" target="_blank"></a>
+  <a href = "mailto:wilgner.showtime@gmail.com"><img src="https://img.shields.io/badge/-Gmail-e83f25?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
+  <a href="https://www.linkedin.com/in/wilgner-souza-stw97/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-0a66c2?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> 
+    <a href="https://api.whatsapp.com/send?phone=5592992806495" target="_blank"><img src="https://img.shields.io/badge/WhatsApp-0aad47?style=for-the-badge&logo=whatsapp&logoColor=white" target="_blank"></a> 
+</div>
 
 ## License
 
