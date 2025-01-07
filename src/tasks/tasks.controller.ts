@@ -7,10 +7,12 @@ import {
   Body,
   Param,
   UseGuards,
+  Request,
 } from '@nestjs/common';
 import { TasksService } from './tasks.service';
 import { Task } from '../database/entities/task.entity';
 import { JwtAuthGuard } from 'src/auth/guards/jwt-auth.guard';
+import { CreateTaskDto } from './dto/task.dto';
 
 @Controller('tasks')
 @UseGuards(JwtAuthGuard)
@@ -18,8 +20,9 @@ export class TasksController {
   constructor(private readonly tasksService: TasksService) {}
 
   @Post()
-  async create(@Body() task: Task): Promise<Task> {
-    return this.tasksService.create(task);
+  async create(@Body() task: CreateTaskDto, @Request() req): Promise<Task> {
+    const user = req.user;
+    return this.tasksService.create(task, user);
   }
 
   @Get()
