@@ -26,6 +26,12 @@ export class TasksController {
   }
 
   @Get()
+  async findByUser(@Request() req): Promise<Task[]> {
+    const userId = req.user.sub;
+    return this.tasksService.findByUser(userId);
+  }
+
+  @Get('/all')
   async findAll(): Promise<Task[]> {
     return this.tasksService.findAll();
   }
