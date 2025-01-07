@@ -24,7 +24,7 @@
 
 ## 📋 Task Manager - Backend
 
-A aplicação backend é desenvolvida usando NestJS com TypeORM e MySQL. Ela fornece endpoints de autenticação (JWT), registro de usuários e gerenciamento de tarefas.
+A aplicação backend é desenvolvida usando NestJS com TypeORM e MySQL. Ela fornece endpoints de autenticação (JWT), registro de usuários e gerenciamento de tarefas como parte da tarefa proposta pela equipe do [Rebate Agro](https://rebateagro.com.br/).
 
 ## 🚀 Funcionalidades
 
