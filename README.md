@@ -16,10 +16,10 @@ A aplicação backend é desenvolvida usando NestJS com TypeORM e MySQL. Ela for
 
 ## 🛠️ Tecnologias Utilizadas
 
-- [NestJs](https://github.com/nestjs/nest)
-- [TypeORM](https://docs.nestjs.com/recipes/sql-typeorm)
-- [MySQL](https://dev.mysql.com/doc/)
-- [Docker](https://docs.docker.com/?_gl=1*1sk8arg*_gcl_au*MTMyNTQxNDU4OS4xNzM2MjkzODA3*_ga*MTgyNDgwMzcwOC4xNzM2MjkzODA4*_ga_XJWPQMJYHQ*MTczNjI5MzgwNy4xLjEuMTczNjI5MzgwOC41OS4wLjA.)
+- [NestJs](https://github.com/nestjs/nest)  ![](https://img.shields.io/badge/--FAFAFF.svg?style=flat&logoColor=DD0031&logo=nestjs "Nest.Js")
+- [TypeORM](https://docs.nestjs.com/recipes/sql-typeorm)  ![](https://img.shields.io/badge/--FAFAFF.svg?style=flat&logoColor=DD0031&logo=typeorm "TypeOrm")
+- [MySQL](https://dev.mysql.com/doc/)  ![](https://img.shields.io/badge/--build?style=flat&logo=mysql&logoColor=blue&color=white "MySQL")
+- [Docker](https://docs.docker.com/?_gl=1*1sk8arg*_gcl_au*MTMyNTQxNDU4OS4xNzM2MjkzODA3*_ga*MTgyNDgwMzcwOC4xNzM2MjkzODA4*_ga_XJWPQMJYHQ*MTczNjI5MzgwNy4xLjEuMTczNjI5MzgwOC41OS4wLjA.)  ![](https://img.shields.io/badge/--FAFAFF.svg?style=flat&logoColor=007cba&logo=docker "Docker")
 - [JWT](https://jwt.io/) (JSON Web Token)
 - [Bcrypt](https://www.npmjs.com/package/bcrypt) - Para hashing de senhas
 
